@@ -3816,8 +3816,9 @@ html {
   min-height: -webkit-fill-available;
 }
 .header__parallax {
-  height: 100%;
+  height: 100vh;
   transition-duration: 3s;
+  min-height: -webkit-fill-available;
   background-color: rgba(1, 1, 1, 0.1);
   background-image: url("../img/myPhotoBW.jpeg");
   background-attachment: fixed;
@@ -3890,7 +3891,7 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 .header__button:hover {
-  background-color: red;
+
 }
 .header #group {
   transition-duration: 3s;
