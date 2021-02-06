@@ -3813,7 +3813,7 @@ html {
 .header {
   height: 100vh;
   transition-duration: 3s;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: -webkit-fill-available;
 }
 .header__parallax {
   height: 100%;
@@ -3890,7 +3890,7 @@ html {
   background-color: rgba(255, 255, 255, 0);
 }
 .header__button:hover {
-  background-color: black;
+  background-color: red;
 }
 .header #group {
   transition-duration: 3s;
