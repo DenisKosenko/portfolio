@@ -3812,16 +3812,12 @@ html {
 }
 .header {
   height: 100vh;
-  transition-duration: 3s;
   min-height: -webkit-fill-available;
 }
 .header__parallax {
-  height: 100vh;
-  transition-duration: 3s;
-  min-height: -webkit-fill-available;
+  height: 100%;
   background-color: rgba(1, 1, 1, 0.1);
   background-image: url("../img/myPhotoBW.jpeg");
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3831,6 +3827,7 @@ html {
   backdrop-filter: blur(3px);
   position: fixed;
   width: 100%;
+  min-height: 60px;
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -3860,6 +3857,7 @@ html {
 }
 .header__link:hover::before {
   left: 0;
+  max-height: 30px;
   width: 100%;
   transition-duration: 0.3s;
   animation-direction: alternate;
@@ -3885,13 +3883,15 @@ html {
   justify-content: space-between;
 }
 .header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  border-radius: 10px;
   transition-duration: 3s;
   outline: none;
-  border: none;
+  border: 3px solid rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0);
-}
-.header__button:hover {
-
 }
 .header #group {
   transition-duration: 3s;
@@ -3902,12 +3902,20 @@ html {
 .header #menu {
   transition-duration: 2s;
 }
+.header #parallax {
+  transition-duration: 3s;
+}
+.header #header {
+  transition-duration: 3s;
+}
 @media (max-width: 768px) {
   .header .header__right {
     opacity: 0;
-    margin-bottom: -15vh;
+    margin-bottom: -25%;
     justify-content: flex-end;
-    padding-right: 0;
+  }
+  .header .header__button {
+    padding: 0;
   }
   .header .header__left {
     margin-left: 15px;
@@ -3919,11 +3927,12 @@ html {
     margin-left: 15px;
   }
   .header .header__link::before {
+    max-height: 70%;
     height: 70%;
   }
   .header .header__link:hover {
-    padding-right: 30vw;
-    transition-duration: 1s;
+    margin-right: 80%;
+    transition-duration: 1.5s;
   }
   .header .header__nav {
     align-items: center;
