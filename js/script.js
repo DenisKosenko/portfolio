@@ -1,3 +1,6 @@
+
+'use strict'
+
 function consoleBG() {
     if ($(window).scrollTop() > window.innerHeight) {
       $('#background').css('background', 'rgba(1,1,1,0.9');
@@ -6,58 +9,70 @@ function consoleBG() {
     }
 }
 
-$(window).scroll(function() {
+window.onscroll = function() {
     consoleBG();
-});
+};
 
 
 
 let i = 0;
+let menuCount = 0
+let menuBool = false
 function consoleBT(){
+    menuCount++
     if($(window).width() < 768){
         i++
         if(i % 2 == 0){
-            $('#menu').css('opacity','0');
-            $('#background').css('height','10vh');
-            $('#group').css('margin-top','0');
-            $('#menu').css('margin-bottom','-15vh');
-            $('#menu').css('transition-duration','2s');
-            $('#background').css('transition-duration','2s');
-            $('#group').css('transition-duration','2s');
-
-            if(window.scrollY < window.innerHeight){
-                $('#background').css('background', 'rgba(1,1,1,0');
-            }
-            enableScrolling();
+           close();
+           buttonBorder('rgba(255, 255, 255, 0)')
+           enableScrolling();
             
         } else {
-            $('#menu').css('opacity','1');
-            $('#background').css('height','100vh');
-            $('#group').css('margin-top','-40vh');
-            $('#menu').css('margin-bottom','-50vh');
-            $('#group').css('transition-duration','3s');
-
-            if(window.scrollY < window.innerHeight){
-                $('#background').css('background', 'rgba(1,1,1,0.2');
-            }
+            open();
+            buttonBorder('rgba(255, 255, 255, 1)')
             disableScrolling();
         }
     }
 }
 
+function buttonBorder(color){
+    $('#button').css('border','3px solid ' + color);
+}
 
+function close(){
+    $('#group').css('margin-top','0');
+    $('#group').css('transition-duration','2s');
 
-$(window).resize(function() {
-    if($(window).width() > 768){
-        $('#menu').css('opacity','1');
-        $('#menu').css('margin-top','-15vh');
-    }else{
-        $('#menu').css('opacity','0');
-        $('#menu').css('margin-top','0');
+    $('#background').css('height','10vh');
+    $('#background').css('transition-duration','2s');
+
+    $('#menu').css('opacity','0'); 
+    
+    $('#menu').css('margin-bottom','-25%');
+    $('#menu').css('transition-duration','2s');
+
+    menuBool = false
+
+    if(window.scrollY < window.innerHeight){
+        $('#background').css('background', 'rgba(1,1,1,0');
     }
-});
+}
 
+function open(){
+    $('#group').css('margin-top','-40vh');
+    $('#group').css('transition-duration','3s');
 
+    $('#background').css('height','100vh');
+
+    $('#menu').css('opacity','1');
+    $('#menu').css('margin-bottom','-50vh');
+
+    menuBool = true 
+
+    if(window.scrollY < window.innerHeight){
+        $('#background').css('background', 'rgba(1,1,1,0.2');
+    }
+}
 
 function disableScrolling(){
     var x=window.scrollX;
@@ -70,16 +85,36 @@ function enableScrolling(){
 
 
 
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.onload = function() {
+    if($(window).width() > 768){
+        $('#parallax').css('background-attachment','fixed');
+    }else{
+        $('#parallax').css('background-attachment','local');
+    }
+};
 
-// We listen to the resize event
-window.addEventListener('resize', () => {
-  // We execute the same script as before
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+
+
+window.onresize = function() {
+    if(($(window).width() > 768) && !menuBool){
+        $('#menu').css('opacity','1');
+        if(menuCount > 0){
+            $('#menu').css('margin-bottom','0');
+        }
+    }
+    else if(($(window).width() > 767) && menuBool){
+        close();
+        buttonBorder('rgba(255, 255, 255, 0)')
+        $('#menu').css('margin-bottom','0');
+    }
+    else if(($(window).width() < 768) && !menuBool){
+        if(menuCount > 0){
+            $('#menu').css('margin-bottom','-25%');
+        }
+        $('#menu').css('opacity','0');
+
+    }
+};
+
 
 
