@@ -3845,7 +3845,7 @@ html {
 }
 .header__link a {
   text-decoration:none; 
-  color: #fff;
+  color: #fff !important;
 }
 .header__link::before {
   content: '';
@@ -3881,7 +3881,7 @@ html {
 }
 .header__left a {
   text-decoration:none; 
-  color: #fff;
+  color: #fff !important;
 }
 .header__right {
   transition-duration: 3s;
