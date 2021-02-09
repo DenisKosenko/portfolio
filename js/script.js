@@ -108,6 +108,7 @@ window.onresize = function() {
         close();
         buttonBorder('rgba(255, 255, 255, 0)')
         $('#menu').css('margin-bottom','0');
+	$('#menu').css('opacity','1');
 	enableScrolling();
     }
     else if(($(window).width() < 768) && !menuList.menuBool){
