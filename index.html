@@ -67,23 +67,23 @@
             </ul>
         </section>
 
-        <section class="work">
-            <div class=" work__content container">
+        <section class="work" id="work">
+            <div class="work__content container">
                 <div class="work__module row justify-content-between">
                     <ul class="work__list row col-12 col-md-8 order-2 order-md-1 ">
-                        <li class="col-6 col-md-4 work__block"><div class="work__screen work__one"></div></li>
-                        <li class="col-6 col-md-8 work__block"><div class="work__screen work__one"></div></li>
+                        <li class="col-5 col-md-4 work__block" onclick="workBlur()"><div class="work__screen work__one"></div></li>
+                        <li class="col-7 col-md-8 work__block" onclick="workBlur()"><div class="work__screen work__two"></div></li>
                     </ul>
                     <div class="work__description col-12 col-md-4 order-1 order-md-2 ">
                         <h2 class="work__name">Work</h2>
                         <div class="work__portfolio">My portfolio of works.</div>
                     </div>
-                    <ul class="work__list row col-12 col-md-8 order-3 ">
-                        <li class="col-12 col-md-4 work__block"><div class="work__screen work__one"></div></li>
-                        <li class="d-none d-md-block col-md-4 work__block"><div class="work__screen work__one"></div></li>
-                        <li class="d-none d-md-block col-6 col-md-4 work__block"><div class="work__screen work__one"></div></li>
+                    <ul class="work__list row col-12 col-md-12 order-3">
+                        <li class="col-7 col-md-5 work__block" onclick="workBlur()"><div class="work__screen work__three"></div></li>
+                        <li class="col-5 d-md-block col-md-4 work__block" onclick="workBlur()"><div class="work__screen work__four"></div></li>
+                        <li class="d-none d-md-block col-6 col-md-3 work__block" onclick="workBlur()"><div class="work__screen work__five"></div></li>
                     </ul>
-                    
+                    <div class="work__blur" id="blur"></div>
                 </div>
             </div>
         </section>
@@ -145,3 +145,4 @@
     </main>
 </body>
 </html>
+
