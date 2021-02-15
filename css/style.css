@@ -3835,7 +3835,7 @@ html {
   text-transform: uppercase;
   font-weight: 600;
   border-bottom: 1px solid #fff;
-  z-index: 10;
+  z-index: 15;
 }
 .header__link {
   display: flex;
@@ -3975,7 +3975,13 @@ a {
 }
 .about {
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .about {
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
 }
 .about__intro {
   font-size: 30px;
@@ -4049,9 +4055,19 @@ a {
   color: #fff;
 }
 .work__module {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
   padding-left: 15px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .work__module {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .work__module .work__portfolio {
+    padding-bottom: 10px;
+  }
 }
 .work__description {
   display: flex;
@@ -4059,6 +4075,13 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   padding-bottom: 10px;
+  z-index: 11;
+}
+@media (max-width: 768px) {
+  .work__description {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .work__name {
   font-size: 30px;
@@ -4078,6 +4101,11 @@ a {
   color: #0B2349;
   display: table;
 }
+@media (max-width: 768px) {
+  .work__portfolio {
+    padding-left: 15px;
+  }
+}
 .work__list {
   list-style-type: none;
   padding-right: 0;
@@ -4087,31 +4115,61 @@ a {
 .work__block {
   padding-right: 5px;
   padding-left: 5px;
-  height: 140px;
+  height: 130px;
   z-index: 1;
   transition-duration: 0.5s;
   animation-direction: alternate;
+  position: relative;
 }
 .work__block:hover {
-  z-index: 5;
-  transform: translate();
+  z-index: 12;
 }
 .work__screen {
   border: 2px solid #ffffff;
   border-radius: 15px;
   width: 100%;
   height: 100%;
-}
-.work__one {
   filter: grayscale(100%);
-  background-image: url(../img/04541.png);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  transition-duration: 0.5s;
+  transition-duration: 7s;
   animation-direction: alternate;
 }
-.work__one:hover {
+.work__screen:hover {
   filter: none;
-  transform: scale(2);
+  transform: scale(1.1);
+  background-position: bottom;
+}
+@media (min-width: 992px) {
+  .work__screen:hover {
+    transform: scale(1.3);
+  }
+}
+.work__one {
+  background-image: url(../img/04541.png);
+}
+.work__two {
+  background-image: url(../img/icrowdme.jpg);
+}
+.work__three {
+  background-image: url(../img/demo-elektrik.png);
+}
+.work__four {
+  background-image: url(../img/29_thumb483x1600.png);
+}
+.work__five {
+  background-image: url(../img/region-expert-index.jpg);
+}
+.work__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  backdrop-filter: blur(3px);
+  transition-duration: 7s;
+  animation-direction: alternate;
+  opacity: 0;
 }
