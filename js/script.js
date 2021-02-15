@@ -151,15 +151,29 @@ function consoleBT(){
 
 
 $( document ).ready(function(){
-    $( ".work__block" ).hover(function(){
-        $('#blur').css('z-index','10');
-        $('#blur').css('opacity','1');
-        $('#blur').css('transition-duration','7s');
-        $('.work__screen').css('transition-duration','7s');
-      }, function(){ 
-        $('#blur').css('z-index','0');
-        $('#blur').css('opacity','0');
-        $('#blur').css('transition-duration','3s');
-        $('.work__screen').css('transition-duration','3s');
-    });
+    if(($(window).width() > 768)){
+        $(".work__block" ).hover(function(){
+            $('#blur').css('z-index','10');
+            $('#blur').css('opacity','1');
+            $('#blur').css('transition-duration','5s');
+            $('.work__screen').css('transition-duration','5s');
+        }, function(){ 
+            $('#blur').css('z-index','0');
+            $('#blur').css('opacity','0');
+            $('#blur').css('transition-duration','3s');
+            $('.work__screen').css('transition-duration','3s');
+        });
+    } else {
+        $(".work__block" ).click(function(){
+            $('#blur').css('z-index','10');
+            $('#blur').css('opacity','1');
+            $('#blur').css('transition-duration','5s');
+            $('.work__screen').css('transition-duration','5s');
+        }, function(){ 
+            $('#blur').css('z-index','0');
+            $('#blur').css('opacity','0');
+            $('#blur').css('transition-duration','3s');
+            $('.work__screen').css('transition-duration','3s');
+        });
+    }
   });
