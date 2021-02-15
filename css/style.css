@@ -4133,7 +4133,7 @@ a {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  transition-duration: 7s;
+  transition-duration: 5s;
   animation-direction: alternate;
 }
 .work__screen:hover {
@@ -4169,7 +4169,7 @@ a {
   width: 100%;
   z-index: 0;
   backdrop-filter: blur(3px);
-  transition-duration: 7s;
+  transition-duration: 5s;
   animation-direction: alternate;
   opacity: 0;
 }
