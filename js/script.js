@@ -67,17 +67,17 @@ function open(){
 
 
 
-function disableScrolling(){
-    let x = window.scrollX;
-    let y = window.scrollY;
-    window.onscroll = function(){window.scrollTo(x, y);};
-}
+// function disableScrolling(){
+//     let x = window.scrollX;
+//     let y = window.scrollY;
+//     window.onscroll = function(){window.scrollTo(x, y);};
+// }
 
 
 
-function enableScrolling(){
-    window.onscroll = function(){};
-}
+// function enableScrolling(){
+//     window.onscroll = function(){};
+// }
 
 
 
@@ -88,7 +88,7 @@ $(window).scroll(function() {
 
 
 window.onload = function() {
-    if($(window).width() > 768){
+    if($(window).width() > 992){
         $('#parallax').css('background-attachment','fixed');
     }else{
         $('#parallax').css('background-attachment','local');
@@ -163,17 +163,5 @@ $( document ).ready(function(){
             $('#blur').css('transition-duration','3s');
             $('.work__screen').css('transition-duration','3s');
         });
-    } else {
-        $(".work__block" ).click(function(){
-            $('#blur').css('z-index','10');
-            $('#blur').css('opacity','1');
-            $('#blur').css('transition-duration','5s');
-            $('.work__screen').css('transition-duration','5s');
-        }, function(){ 
-            $('#blur').css('z-index','0');
-            $('#blur').css('opacity','0');
-            $('#blur').css('transition-duration','3s');
-            $('.work__screen').css('transition-duration','3s');
-        });
-    }
+    } 
   });
