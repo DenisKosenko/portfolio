@@ -3843,15 +3843,9 @@ html {
   position: relative;
   letter-spacing: 2px;
 }
-.header__link:active {
-  background-color: rgba(255, 27, 27, 0.959);
-}
 .header__link a {
   text-decoration: none;
   color: #fff !important;
-}
-.header__link a:active {
-  background-color: rgba(255, 0, 0, 0);
 }
 .header__link::before {
   content: '';
