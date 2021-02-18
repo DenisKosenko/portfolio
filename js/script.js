@@ -13,7 +13,7 @@ let menuList = {
 
 function consoleBG() {
     if ($(window).scrollTop() > window.innerHeight) {
-      $('#background').css('background', 'rgba(1,1,1,0.9');
+      $('#background').css('background', 'rgba(17,17,17,0.9)');
     } else {
       $('#background').css('background', 'rgba(1,1,1,0');
     }
@@ -61,7 +61,7 @@ function open(){
     menuList.menuBool = true 
 
     if(window.scrollY < window.innerHeight){
-        $('#background').css('background', 'rgba(1,1,1,0.2');
+        $('#background').css('background', 'rgba(17,17,17,0.2)');
     }
 }
 
@@ -155,13 +155,9 @@ $( document ).ready(function(){
         $(".work__block" ).hover(function(){
             $('#blur').css('z-index','10');
             $('#blur').css('opacity','1');
-            $('#blur').css('transition-duration','5s');
-            $('.work__screen').css('transition-duration','5s');
         }, function(){ 
             $('#blur').css('z-index','0');
             $('#blur').css('opacity','0');
-            $('#blur').css('transition-duration','3s');
-            $('.work__screen').css('transition-duration','3s');
-        });
+       });
     } 
   });
