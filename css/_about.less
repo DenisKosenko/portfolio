@@ -1,0 +1,101 @@
+
+.about{
+
+    padding-top: 100px;
+    padding-bottom: 10px;
+
+    @media (max-width: 768px){
+        padding-top: 50px;
+        padding-bottom: 0;
+    }
+
+    &__intro{
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: white;
+        background-color: rgb(49, 49, 49);
+        border-radius: 15px;
+        padding: 5px 10px 5px 10px;
+    }
+
+    &__what{
+        text-align: end;
+        color: rgb(80, 80, 80);
+    }
+
+    &__left{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    &__right{
+        color: #a6a7aa;
+        p{
+            margin-top: 0;
+            word-spacing: 3px;
+            b{
+                margin-left: 5px;
+                line-height: 2;
+                color: rgb(255, 255, 255);
+                background-color: rgb(49, 49, 49);
+                border-radius: 10px;
+                padding: 5px 10px 5px 10px;
+            }
+        }
+    }
+
+    &__list{
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    &__tech{
+        padding-bottom: 5px;
+        img{
+            filter: grayscale(100%);
+            transition-duration: 0.5s;
+            animation-direction: alternate;
+            &:hover{
+                filter: none;
+                transform: scale(1.1);
+            } 
+        }
+    }
+    
+    &__future{
+        height: 5px;
+        background: @gradient;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+
+        span{
+            display: flex;
+            justify-content: center;
+            margin-top: -10px;
+            background-color: rgb(255, 255, 255);
+            width: 120px;
+
+            b{
+                font-size: 20px;
+                font-weight: 600;
+                background: @gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-color: #fff;
+                color: #0B2349;
+                display: table;
+            }
+        }
+
+    }
+}
+
+
+
+
+
